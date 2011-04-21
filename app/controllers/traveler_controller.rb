@@ -17,7 +17,7 @@ class TravelerController < ApplicationController
         flash[:notice] = 'Welcome to Tripapalooza!!!'
         format.html { redirect_to(action: "new") }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to(action: "new") }
       end
     end
   end
