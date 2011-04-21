@@ -5,3 +5,5 @@ tmp/
 .idea/*
 .idea/
 .idea/*.*
+.idea/.generators
+.idea/misc.xml

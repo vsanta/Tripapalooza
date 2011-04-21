@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'nokogiri'
 
 describe LandingController do
 
@@ -7,6 +8,7 @@ describe LandingController do
       get 'index'
       response.should be_success
     end
+
   end
 
 end
