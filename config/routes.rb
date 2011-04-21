@@ -1,4 +1,16 @@
 Tripapalooza::Application.routes.draw do
+  get "traveler/index"
+
+  get "traveler/new"
+
+  get "traveler/create"
+
+  get "traveller_registration/index"
+
+  get "traveller_registration/new"
+
+  get "traveller_registration/create"
+
   get "landing/index"
 
   # The priority is based upon order of creation:
@@ -56,5 +68,5 @@ Tripapalooza::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+  match ':controller(/:action(/:id(.:format)))'
 end

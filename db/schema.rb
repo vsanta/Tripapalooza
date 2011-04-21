@@ -12,10 +12,10 @@
 
 ActiveRecord::Schema.define(:version => 20110421184818) do
 
-  create_table "travellers", :force => true do |t|
-    t.string   "name",       :limit => 20
-    t.string   "email",      :limit => 50
-    t.string   "password",   :limit => 20
+  create_table "travelers", :force => true do |t|
+    t.string   "nick",       :limit => 20, :null => false
+    t.string   "email",      :limit => 50, :null => false
+    t.string   "password",   :limit => 20, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

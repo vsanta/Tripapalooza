@@ -1,0 +1,16 @@
+%p= flash[:notice]
+
+#registration
+  %h1 Registration
+
+  = form_for :traveler, :url => { :action => 'create' } do |f|
+    Nick:
+    = f.text_field :nick
+    %br
+    E-mail:
+    = f.text_field :email
+    %br
+    Password:
+    = f.text_field :password
+    %br
+    = submit_tag 'Ok'
