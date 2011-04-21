@@ -15,9 +15,9 @@ class TravelerController < ApplicationController
     respond_to do |format|
       if @traveler.save
         flash[:notice] = 'Welcome to Tripapalooza!!!'
-        format.html { redirect_to(:action => "new") }
+        format.html { redirect_to(action: "new") }
       else
-        format.html { render :action => "new" }
+        format.html { render action: "new" }
       end
     end
   end

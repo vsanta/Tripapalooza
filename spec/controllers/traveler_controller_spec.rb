@@ -5,7 +5,7 @@ describe TravelerController do
   describe "GET 'index'" do
     it "should be successful" do
       get 'index'
-      response.should be_success
+      response.should redirect_to(action: "new")
     end
   end
 
@@ -16,10 +16,11 @@ describe TravelerController do
     end
   end
 
-  describe "GET 'create'" do
+  describe "POST 'create'" do
     it "should be successful" do
-      get 'create'
-      response.should be_success
+      post 'create', :traveler => { nick: "isabel", email: "bel@tripapalooza.net", password: "123456" }
+      flash[:notice].should == 'Welcome to Tripapalooza!!!'
+      response.should redirect_to(action: "new")
     end
   end
 
