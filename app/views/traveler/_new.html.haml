@@ -3,7 +3,7 @@
 #registration
   %h1 Registration
 
-  = form_for :traveler, :url => { :action => 'create' } do |f|
+  = form_for :traveler, :method => 'post', :url => { :controller => 'traveler', :action => 'create' } do |f|
     Nick:
     = f.text_field :nick
     %br
