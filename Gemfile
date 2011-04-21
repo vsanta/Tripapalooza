@@ -6,7 +6,17 @@ gem 'rails', '3.0.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-gem 'haml'
+gem 'jquery-rails'
+gem 'haml-rails'
+#
+#gem 'devise', '1.1.rc0'
+#
+#gem 'formtastic', '~> 1.1.0'
+#gem 'inherited_resources', '1.1.2'
+#gem "will_paginate", "~> 3.0.pre2"
+#gem 'rack-cache'
+#gem "paperclip", "~> 2.3"
+
 
 
 # Use unicorn as the web server
@@ -28,6 +38,8 @@ gem 'haml'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+
+end
