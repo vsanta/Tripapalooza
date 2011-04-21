@@ -1,4 +1,38 @@
-header{
-    background: none repeat scroll 0 0 #000000;
-    padding: 15px 0;
+header {
+	background: #FFF;
+	padding: 15px 0;
 }
+
+header h1 {
+	float: left;
+	margin: 0;
+}
+
+header h1 a {
+	background: url("../images/tripapalooza-logo.gif");
+	float: left;
+	height: 50px;
+	overflow: hidden;
+	text-indent: -900px;
+	width: 193px;
+}
+#content {
+	padding: 50px 0;
+    min-height:280px;
+}
+
+#content .box{
+padding: 0 5px;
+border: 1px solid #CCC;
+-moz-border-radius: 15px;
+border-radius: 15px;
+min-height: 50px;
+}
+
+
+footer {
+	background: #222;
+	color: #FFF;
+	padding: 34px 0;
+}
+
