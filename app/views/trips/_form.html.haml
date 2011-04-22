@@ -1,10 +1,23 @@
 = form_for @trip do |f|
-  -if @trip.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@trip.errors.count, "error")} prohibited this trip from being saved:"
-      %ul
-        - @trip.errors.full_messages.each do |msg|
-          %li= msg
+  %p.form_item
+    %label{:for => "name"}
+    = t :trip_name_label
+    %span.error= error_message_on("name")
+    = f.text_field :name, :tabindex => autotab, :maxlength => 50, :class => error_for("name")
+  %p.form_item
+    %label{:for => "destination"}
+    = t :trip_destination
+    %span.error= error_message_on("destination")
+    = f.text_field :destination, :tabindex => autotab, :maxlength => 50, :class => error_for("destination")
+  %fieldset.form_item.date
+    %label{:for => "start"}
+    = t :start_trip
+    %span.error= error_message_on("start")
+    = f.text_field :start, :tabindex => autotab, :maxlength => 10, :class => error_for("start")
+    %label{:for => "end"}
+    = t :end_trip
+    %span.error= error_message_on("end")
+    = f.text_field :end, :tabindex => autotab, :maxlength => 10, :class => error_for("end")
 
-  .actions
-    = f.submit 'Save'
+  %p.form_submit
+    = f.submit "Create trip »", :class=>"submit"

@@ -3,6 +3,13 @@
 
 en:
   traveler_registration_success: 'Welcome to Tripapalooza!!!'
+  register: "Register »"
+  trip_name_label: "Name your trip"
+  trip_destination: "What's your destination?"
+  start_trip: "Starts on"
+  end_trip: "Until"
+  create_trip: "Create »"
+
 
 
 

@@ -1,5 +1,10 @@
-%h1 New trip
+%h2 New trip
 
-= render 'form'
+%section#trip_form
+  .grid_8
+    = render 'form'
 
-= link_to 'Back', trips_path
+%section#map
+  .grid_4
+    = render 'mini_map'
+
