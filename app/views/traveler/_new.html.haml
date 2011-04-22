@@ -6,12 +6,14 @@
   = form_for :traveler, :method => 'post', :url => { :controller => 'traveler', :action => 'create' } do |f|
     %p.form_item
       %label{:for => "nick"} Nickname
-      = f.text_field :nick
+      = f.text_field :nick, :tabindex => autotab
     %p.form_item
       %label{:for => "email"} Email
-      = f.email_field :email
+      = f.email_field :email, :tabindex => autotab
     %p.form_item
       %label{:for => "password"} Password
+      %br
+      %span from 6 to 20 characters
       = f.password_field :password
     %p.form_submit
       = f.submit "Register »"

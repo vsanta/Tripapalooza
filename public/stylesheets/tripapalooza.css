@@ -3,7 +3,7 @@ html {
 }
 
 header {
-	background: #2daebf;
+	background: #222;
 	padding: 15px 0;
 }
 
@@ -13,12 +13,12 @@ header h1 {
 }
 
 header h1 a {
-	background: url("../images/tripapalooza-logo.gif");
+	background: url("../images/tripapalooza-logo.gif") no-repeat;
 	float: left;
-	height: 50px;
+	height: 40px;
 	overflow: hidden;
 	text-indent: -900px;
-	width: 193px;
+	width: 200px;
 }
 #content {
 	padding: 50px 0;
@@ -37,6 +37,10 @@ header h1 a {
     margin-bottom:10px;
 }
 
+#registration .p{
+    padding:7px;
+}
+
 #registration label{
     color: #666;
     text-transform: lowercase;
@@ -44,9 +48,12 @@ header h1 a {
     font-size:14px;
 }
 
-#registration .form_item,
-#registration .form_submit{
-    padding:7px;
+#registration span {
+    font-size: 11px;
+    color: #999;
+}
+#registration span.error {
+    color: #AA3131;
 }
 
 #registration .form_item input{
@@ -54,7 +61,7 @@ header h1 a {
     -moz-border-radius: 2px 2px 2px 2px;
     background:  #FFFFFF;
     border: 1px solid #BBBBBB;
-    color: #777777;
+    color: #777;
     display: block;
     font: 13px Helvetica Neue,"Arial",Helvetica,Verdana,sans-serif;
     margin: 5px 0 10px;
@@ -65,7 +72,7 @@ header h1 a {
 #registration .form_item input:focus{
    outline: medium none;
    border: 1px solid #2DAEBF;
-   color: #333333;
+   color: #333;
 }
 
 #registration input[type="submit"],
