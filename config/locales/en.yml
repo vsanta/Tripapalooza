@@ -2,4 +2,12 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  traveler_registration_success: 'Welcome to Tripapalooza!!!'
+
+
+
+  activerecord:
+    errors:
+      messages:
+        blank_space: 'is invalid (it cannot contain blank space)'
+        blank: ' must be informed'
