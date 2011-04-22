@@ -1,5 +1,9 @@
+html {
+    overflow-y: scroll;
+}
+
 header {
-	background: #FFF;
+	background: #2daebf;
 	padding: 15px 0;
 }
 
@@ -22,13 +26,85 @@ header h1 a {
 }
 
 #content .box{
-padding: 0 5px;
-border: 1px solid #CCC;
--moz-border-radius: 15px;
-border-radius: 15px;
-min-height: 50px;
+    padding: 10px;
+    border: 1px solid #CCC;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    min-height: 50px;
 }
 
+#registration input{
+    width:260px;
+}
+
+#registration .form_item input:focus{
+   outline: medium none;
+   border: 1px solid #2DAEBF;
+   color: #333333;
+}
+
+#registration h3{
+    margin-bottom:10px;
+}
+
+#registration .form_item,
+#registration .form_submit{
+    padding:7px;
+}
+#registration .form_item input{
+    height:20px;
+    -moz-border-radius: 2px 2px 2px 2px;
+    background:  #FFFFFF;
+    border: 1px solid #BBBBBB;
+    color: #777777;
+    display: block;
+    font: 13px Helvetica Neue,"Arial",Helvetica,Verdana,sans-serif;
+    margin: 5px 0 10px;
+    padding:5px;
+}
+
+
+#registration label{
+    color: #666;
+    text-transform: lowercase;
+    font-weight:bold;
+    font-size:14px;
+}
+#registration input[type="submit"],
+#registration input[type="submit"]:visited,
+.register,
+.register:visited{
+	background: #222 url(../images/alert-overlay.png) repeat-x;
+    background-color: #2daebf;
+    border: 1px solid #2daebf;
+	display: inline-block;
+	color: #FFF;
+	text-decoration: none;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    font-size: 14px;
+    padding: 8px 14px 9px;
+    filter:chroma(color=#000000);
+    
+
+}
+.register:hover,
+#registration input[type="submit"]:hover{
+    background-color: #007d9a;
+    border: 1px solid #007d9a;
+}
+.register:active,
+#registration input[type="submit"]:active{
+    top: 1px;
+}
 
 footer {
 	background: #222;

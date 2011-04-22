@@ -162,6 +162,19 @@ caption {
   vertical-align: top;
   text-align: left;
 }
+input[type="button"]{
+    outline: none;
+    background:none;
+    border:0;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #333333;
+    font-weight: bold;
+}
+
+body{
+    font-family:Arial,Helvetica,Helvetica Neue,Verdana,sans-serif;
+}
 
 svg {
 /*

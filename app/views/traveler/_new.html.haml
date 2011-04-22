@@ -4,14 +4,15 @@
   %p= flash[:notice]
 
   - form_for :traveler, :method => 'post', :url => { :controller => 'traveler', :action => 'create' } do |f|
-    %p
-      %label{:for => "nick"} Nickname:
+    %p.form_item
+      %label{:for => "nick"} Nickname
       = f.text_field :nick
-    %p
-      %label{:for => "email"} E-mail:
-      = f.text_field :email
-    %p
-      %label{:for => "password"} Password:
-      = f.text_field :password
-    = f.submit "Register"
+    %p.form_item
+      %label{:for => "email"} Email
+      = f.email_field :email
+    %p.form_item
+      %label{:for => "password"} Password
+      = f.password_field :password
+    %p.form_submit
+      = f.submit "Register »"
 
