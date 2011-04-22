@@ -46,10 +46,7 @@ GEM
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    geokit (1.5.0)
-    geokit-rails3 (0.1.3)
-      geokit (~> 1.5.0)
-      rails (~> 3.0.4)
+    geocoder (0.9.13)
     gherkin (2.3.5)
       json (>= 1.4.6)
     haml (3.0.25)
@@ -116,7 +113,7 @@ PLATFORMS
 DEPENDENCIES
   autotest
   cucumber-rails
-  geokit-rails3
+  geocoder
   haml-rails
   jquery-rails
   mysql2

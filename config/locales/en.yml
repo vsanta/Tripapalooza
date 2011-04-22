@@ -11,3 +11,4 @@ en:
       messages:
         blank_space: 'is invalid (it cannot contain blank space)'
         blank: ' must be informed'
+        start_before_end_date: 'start date should be before end date' 

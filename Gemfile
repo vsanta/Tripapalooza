@@ -8,9 +8,10 @@ gem 'rails', '3.0.5'
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'haml-rails'
-gem 'geokit-rails3'
+gem 'geocoder'
 
 #
+
 #gem 'devise', '1.1.rc0'
 #
 #gem 'formtastic', '~> 1.1.0'

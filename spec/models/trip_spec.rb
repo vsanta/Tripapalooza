@@ -6,11 +6,9 @@ describe Trip do
     before(:each) do
       @trip = Trip.new()
       @trip.destination = "New York"
-      @trip.destination_lat = 40.77
-      @trip.destination_lon =  73.98
-      @today = Date.today()
-      @trip.start = @today
-      @trip.end = @today.next_month()
+      today = Date.today()
+      @trip.start = today
+      @trip.end = today.next_month()
       @trip.name = "My Cool Trip to NYC"
     end
     it "should have a name" do
@@ -27,13 +25,15 @@ describe Trip do
         @trip.save.should raise_error
       end
       it "should have lat and lon based on destination" do
-        pending
+        @trip.save
+        @trip.destination_lat.should == 40.7143528
+        @trip.destination_lon.should == -74.0059731
       end
     end
     describe "date information" do
       it "should have start date before of end date" do
-        @trip.end = @today
-        @trip.start = @today.next_month()
+        @trip.end = @trip.start
+        @trip.start = @trip.end.yesterday
         @trip.save.should raise_error
       end
     end

@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(:version => 20110422182627) do
   end
 
   create_table "trips", :force => true do |t|
-    t.string   "name",                                           :null => false
-    t.string   "destination",                                    :null => false
-    t.decimal  "destination_lat", :precision => 10, :scale => 0
-    t.decimal  "destination_lon", :precision => 10, :scale => 0
+    t.string   "name",            :null => false
+    t.string   "destination",     :null => false
+    t.float    "destination_lat"
+    t.float    "destination_lon"
     t.date     "start"
     t.date     "end"
     t.datetime "created_at"
