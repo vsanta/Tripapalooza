@@ -14,7 +14,7 @@ class TravelerController < ApplicationController
     @traveler = Traveler.new(params[:traveler])
 
     if @traveler.save
-      flash[:notice] = 'Welcome to Tripapalooza!!!'
+      flash[:notice] = t(:traveler_registration_success)
     else
       flash[:error] = @traveler.errors
     end
