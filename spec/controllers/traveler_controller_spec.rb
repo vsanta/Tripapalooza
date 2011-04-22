@@ -19,25 +19,29 @@ describe TravelerController do
   describe "POST 'create'" do
 
     it "should CREATE Traveler SUCCESSFULLY" do
-      post 'create', :traveler => { nick: "isabel", email: "bel@tripapalooza.net", password: "123456" }
-      response.should redirect_to(controller: "landing", action: "index")
+      traveler = { nick: "isabel", email: "bel@tripapalooza.net", password: "123456" }
+      post 'create', :traveler => traveler
+      response.should redirect_to(controller: "landing", action: "index", traveler: traveler)
       flash[:notice].should == 'Welcome to Tripapalooza!!!'
     end
 
     describe "validations for travelersnickname" do
       it "should return error when NOT INPUTTING a Traveler's NICK" do
-        post 'create', :traveler => { email: "bel@tripapalooza.net", password: "123456" }
-        response.should redirect_to(controller: "landing", action: "index")
+        traveler = { email: "bel@tripapalooza.net", password: "123456" }
+        post 'create', :traveler => traveler
+        response.should redirect_to(controller: "landing", action: "index", traveler: traveler)
         assert_equal(1, assigns[:traveler].errors.count)
       end
       it "should return error when inputting a Traveler's NICK with LENGTH OVER 20" do
-        post 'create', :traveler => { nick: "aaaaaaaaaaaaaaaaaaaaa", email: "bel@tripapalooza.net", password: "123456" }
-        response.should redirect_to(controller: "landing", action: "index")
+        traveler = { nick: "aaaaaaaaaaaaaaaaaaaaa", email: "bel@tripapalooza.net", password: "123456" }
+        post 'create', :traveler => traveler
+        response.should redirect_to(controller: "landing", action: "index", traveler: traveler)
         assert_equal(1, assigns[:traveler].errors.count)
       end
       it "should return error when inputting a Traveler's NICK with BLANK SPACE" do
-        post 'create', :traveler => { nick: "aaa aaa", email: "bel@tripapalooza.net", password: "123456" }
-        response.should redirect_to(controller: "landing", action: "index")
+        traveler = { nick: "aaa aaa", email: "bel@tripapalooza.net", password: "123456" }
+        post 'create', :traveler => traveler
+        response.should redirect_to(controller: "landing", action: "index", traveler: traveler)
         assert_equal(1, assigns[:traveler].errors.count)
       end
       it "should return error when inputting a Traveler's NICK that is already BEING USED" do
@@ -50,13 +54,15 @@ describe TravelerController do
     describe "validations for travelers email" do
 
       it "should return error when NOT INPUTTING a Traveler's E-MAIL" do
-        post 'create', :traveler => { nick: "isabel", password: "123456" }
-        response.should redirect_to(controller: "landing", action: "index")
+        traveler =  { nick: "isabel", password: "123456" }
+        post 'create', :traveler => traveler
+        response.should redirect_to(controller: "landing", action: "index", traveler: traveler)
         assert_equal(1, assigns[:traveler].errors.count)
       end
       it "should return error when inputting a Traveler's E-MAIL with LENGTH OVER 50" do
-        post 'create', :traveler => { nick: "aaaa", email: "belAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@tripapalooza.com.br", password: "ABCDEF" }
-        response.should redirect_to(controller: "landing", action: "index")
+        traveler = { nick: "aaaa", email: "belAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@tripapalooza.com.br", password: "ABCDEF" }
+        post 'create', :traveler => traveler
+        response.should redirect_to(controller: "landing", action: "index", traveler: traveler)
         assert_equal(1, assigns[:traveler].errors.count)
       end
 
@@ -75,28 +81,32 @@ describe TravelerController do
 
     describe "validations for taverlers password" do
       it "should return error when NOT INPUTTING a Traveler's PASSWORD" do
-         post 'create', :traveler => { nick: "isabel", email: "bel@tripapalooza.net" }
-        response.should redirect_to(controller: "landing", action: "index")
+        traveler =  { nick: "isabel", email: "bel@tripapalooza.net" }
+        post 'create', :traveler => traveler
+        response.should redirect_to(controller: "landing", action: "index", traveler: traveler)
         assert_equal(1, assigns[:traveler].errors.count)
       end
 
       it "should return error when inputting a Traveler's PASSWORD with LENGTH LESS than 6" do
-        post 'create', :traveler => { nick: "isabel", email: "bel@tripapalooza.net", password: "12345" }
-        response.should redirect_to(controller: "landing", action: "index")
+        traveler =  { nick: "isabel", email: "bel@tripapalooza.net", password: "12345" }
+        post 'create', :traveler => traveler
+        response.should redirect_to(controller: "landing", action: "index", traveler: traveler)
         assert_equal(1, assigns[:traveler].errors.count)
       end
 
 
       it "should return error when inputting a Traveler's PASSWORD with LENGTH OVER 20" do
-        post 'create', :traveler => { nick: "isabel", email: "bel@tripapalooza.net", password: "123456789012345678901" }
-        response.should redirect_to(controller: "landing", action: "index")
+        traveler ={ nick: "isabel", email: "bel@tripapalooza.net", password: "123456789012345678901" }
+        post 'create', :traveler => traveler
+        response.should redirect_to(controller: "landing", action: "index", traveler: traveler)
         assert_equal(1, assigns[:traveler].errors.count)
       end
 
 
       it "should return error when inputting a Traveler's PASSWORD with BLANK SPACE" do
-        post 'create', :traveler => { nick: "isabel", email: "bel@tripapalooza.net", password: "123 456" }
-        response.should redirect_to(controller: "landing", action: "index")
+        traveler = { nick: "isabel", email: "bel@tripapalooza.net", password: "123 456" }
+        post 'create', :traveler => traveler
+        response.should redirect_to(controller: "landing", action: "index", traveler: traveler)
         assert_equal(1, assigns[:traveler].errors.count)
       end
 

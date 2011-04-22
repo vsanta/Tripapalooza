@@ -16,7 +16,7 @@ class TravelerController < ApplicationController
     if @traveler.save
       flash[:notice] = 'Welcome to Tripapalooza!!!'
     end
-    redirect_to :controller=> "landing", :action=> "index"
+    redirect_to :controller=> "landing", :action=> "index", :traveler => params[:traveler]
 
   end
 
