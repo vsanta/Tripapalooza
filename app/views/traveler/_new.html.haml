@@ -3,7 +3,7 @@
   %h3 Registration
   %p= flash[:notice]
 
-  - form_for :traveler, :method => 'post', :url => { :controller => 'traveler', :action => 'create' } do |f|
+  = form_for :traveler, :method => 'post', :url => { :controller => 'traveler', :action => 'create' } do |f|
     %p.form_item
       %label{:for => "nick"} Nickname
       = f.text_field :nick
