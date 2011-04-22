@@ -10,7 +10,7 @@ module ApplicationHelper
   end
 
   def error_for(field)
-     'error' if !flash[:error].nil? and !flash[:error][field].nil?
+    'error' if !flash[:error].nil? and !flash[:error][field].empty?
   end
 
 end
