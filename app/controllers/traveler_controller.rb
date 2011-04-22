@@ -7,20 +7,20 @@ class TravelerController < ApplicationController
   end
 
   def new
+    @traveler = Traveler.new
   end
 
   def create
     @traveler = Traveler.new(params[:traveler])
 
-    respond_to do |format|
-      if @traveler.save
-        flash[:notice] = 'Welcome to Tripapalooza!!!'
-        format.html { redirect_to(controller: "landing", action: "index") }
-      else
-        flash[:error] = @traveler.errors
-        format.html { redirect_to(controller: "landing", action: "index") }
-      end
+    if @traveler.save
+      flash[:notice] = 'Welcome to Tripapalooza!!!'
+    else
+      flash[:error] = @traveler.errors
     end
+
+    redirect_to :controller=> "landing", :action=> "index"
+
   end
 
 end
