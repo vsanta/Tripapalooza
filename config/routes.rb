@@ -5,13 +5,9 @@ Tripapalooza::Application.routes.draw do
 
   get "traveler/create"
 
-  get "traveller_registration/index"
-
-  get "traveller_registration/new"
-
-  get "traveller_registration/create"
-
   get "landing/index"
+
+  resources :trips
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
