@@ -61,7 +61,7 @@ header h1 a {
     -moz-border-radius: 2px 2px 2px 2px;
     background:  #FFFFFF;
     border: 1px solid #BBBBBB;
-    color: #777;
+    color: #444;
     display: block;
     font: 13px Helvetica Neue,"Arial",Helvetica,Verdana,sans-serif;
     margin: 5px 0 10px;
@@ -70,9 +70,11 @@ header h1 a {
 }
 
 #registration .form_item input:focus{
-   outline: medium none;
    border: 1px solid #2DAEBF;
-   color: #333;
+}
+
+#registration .form_item input.error{
+   border: 1px solid #AA3131;
 }
 
 #registration input[type="submit"],
