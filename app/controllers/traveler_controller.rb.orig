@@ -1,0 +1,30 @@
+class TravelerController < ApplicationController
+
+  respond_to :html
+
+  def index
+    redirect_to(action: "new")
+  end
+
+  def new
+    @traveler = Traveler.new
+  end
+
+  def create
+    @traveler = Traveler.new(params[:traveler])
+
+    if @traveler.save
+      flash[:notice] = 'Welcome to Tripapalooza!!!'
+    else
+      flash[:error] = @traveler.errors
+    end
+<<<<<<< HEAD
+    redirect_to :controller=> "landing", :action=> "index", :traveler => params[:traveler]
+=======
+
+    redirect_to :controller=> "landing", :action=> "index"
+>>>>>>> 761fb4bb52f324ec6174b911f59522bfb63bdb8a
+
+  end
+
+end
