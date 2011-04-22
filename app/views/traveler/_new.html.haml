@@ -2,6 +2,7 @@
 #registration
   %h3 Registration
   %p= flash[:notice]
+  %p= flash[:error]
 
   = form_for :traveler, :method => 'post', :url => { :controller => 'traveler', :action => 'create' } do |f|
     %p.form_item

@@ -17,6 +17,7 @@ class TravelerController < ApplicationController
         flash[:notice] = 'Welcome to Tripapalooza!!!'
         format.html { redirect_to(controller: "landing", action: "index") }
       else
+        flash[:error] = @traveler.errors
         format.html { redirect_to(controller: "landing", action: "index") }
       end
     end
