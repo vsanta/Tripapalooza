@@ -1,16 +1,17 @@
-%p= flash[:notice]
 
 #registration
-  %h1 Registration
+  %h3 Registration
+  %p= flash[:notice]
 
-  = form_for :traveler, :method => 'post', :url => { :controller => 'traveler', :action => 'create' } do |f|
-    Nick:
-    = f.text_field :nick
-    %br
-    E-mail:
-    = f.text_field :email
-    %br
-    Password:
-    = f.text_field :password
-    %br
-    = submit_tag 'Ok'
+  - form_for :traveler, :method => 'post', :url => { :controller => 'traveler', :action => 'create' } do |f|
+    %p
+      %label{:for => "nick"} Nickname:
+      = f.text_field :nick
+    %p
+      %label{:for => "email"} E-mail:
+      = f.text_field :email
+    %p
+      %label{:for => "password"} Password:
+      = f.text_field :password
+    = f.submit "Register"
+

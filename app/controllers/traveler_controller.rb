@@ -7,7 +7,6 @@ class TravelerController < ApplicationController
   end
 
   def new
-    render partial: "new"
   end
 
   def create
