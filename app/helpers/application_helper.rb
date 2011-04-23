@@ -5,8 +5,8 @@ module ApplicationHelper
     @current_tab +=1
   end
 
-  def error
-    'error' if !flash[:error].nil?
+  def error_on_flash(flash_error)
+    'error' if !flash[flash_error].nil?
   end
 
   def error_message_on(field)

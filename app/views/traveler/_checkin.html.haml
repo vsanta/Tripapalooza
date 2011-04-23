@@ -4,8 +4,9 @@
       %label{:for => "nick"} Nickname
       %label{:for => "password"} Password
     %fieldset.checkin#fields
-      = f.text_field :nick, :tabindex => autotab, :maxlength => 20, :class => error
-      = f.password_field :password, :tabindex => autotab, :maxlength => 20, :class => error
+      = f.text_field :nick, :tabindex => autotab, :maxlength => 20, :class => error_on_flash(:checkin_error)
+      = f.password_field :password, :tabindex => autotab, :maxlength => 20, :class => error_on_flash(:checkin_error)
       = f.submit "Check in »"
+    %fieldset.checkin#fields
       %span.error= flash[:checkin_error]
 

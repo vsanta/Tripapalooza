@@ -155,7 +155,6 @@ form fieldset.checkin{
 form fieldset.checkin input{
     width: 93px;
     -moz-border-radius: 3px 3px 3px 3px;
-    border: medium none !important;
     font-size: 11px;
 }
 form fieldset.checkin input[type="submit"]{
