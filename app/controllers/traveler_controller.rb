@@ -18,19 +18,17 @@ class TravelerController < ApplicationController
     else
       flash[:error] = @traveler.errors
     end
-    redirect_to :controller=> "landing", :action=> "index", :traveler => params[:traveler]
+    redirect_to :back, :traveler => params[:traveler]
 
-  end
-
-  def checkin_show
   end
 
   def checkin
-    if (Traveler.authenticate params[:traveler][:nick], params[:traveler][:password])
+    if (Traveler.authenticate params[:checkin][:nick], params[:checkin][:password])
       render :text => "Usuario/senha correto"
     else
-      flash[:error] = "Usuario ou senha incorretos"
-      redirect_to :controller=> "traveler", :action=> "checkin_show", :traveler => params[:traveler]
+      flash[:checkin_error] = "Usuario ou senha incorretos"
+      params[:checkin][:password] = ''
+      redirect_to :back, :checkin => params[:checkin]
     end
 
   end

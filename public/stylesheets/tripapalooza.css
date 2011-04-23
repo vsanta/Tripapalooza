@@ -65,6 +65,7 @@ form span {
 }
 form span.error {
     color: #AA3131;
+    display: inline;
 }
 
 .grid_4 form input{
@@ -83,15 +84,6 @@ form input{
     font: 13px Helvetica Neue,"Arial",Helvetica,Verdana,sans-serif;
     margin: 5px 0 10px;
     padding:5px;
-}
-form fieldset.checkin input[type="text"]{
-    width: 105px;
-}
-form fieldset.checkin input[type="submit"]{
-    width: 150px;
-    text-align: center;
-    height: 30px;
-    padding: 5px 5px 10px;
 }
 form input:focus{
    border: 1px solid #2DAEBF;
@@ -150,3 +142,30 @@ footer {
 	padding: 34px 0;
 }
 
+div.checkin{
+    float: right;
+}
+
+form fieldset.checkin{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 0px 10px;
+}
+
+form fieldset.checkin input{
+    width: 93px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    border: medium none !important;
+    font-size: 11px;
+}
+form fieldset.checkin input[type="submit"]{
+    width: 85px;
+    text-align: center;
+    height: 30px;
+    padding: 7.5px 0px 9px;
+}
+
+form fieldset.checkin label{
+    padding: 0px 50px 0px 0px;
+    font-size: 11px;
+}
