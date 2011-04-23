@@ -13,8 +13,12 @@ class TripsController < ApplicationController
 
   # GET /trips/new
   def new
-    @trip = Trip.new
-    map_init
+    if params.has_key?(:trip)
+      @trip = Trip.new(params[:trip])
+    else
+      @trip = Trip.new  
+    end
+    @map = map_init
     @map.markers << get_my_current_location_marker
 
   end
@@ -31,7 +35,9 @@ class TripsController < ApplicationController
       if @trip.save
         return redirect_to(@trip, :notice => 'Trip was successfully created.')
       end
-      render :action => "new"
+      flash[:error] = @trip.errors
+      redirect_to :action=>"new", :trip=>params[:trip]
+
   end
 
   # PUT /trips/1
@@ -41,7 +47,7 @@ class TripsController < ApplicationController
       if @trip.update_attributes(params[:trip])
         return redirect_to(@trip, :notice => 'Trip was successfully updated.')
       end
-      render :action => "edit" 
+      render :action => "edit"
 
   end
 

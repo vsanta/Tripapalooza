@@ -67,7 +67,7 @@ describe TripsController do
       it "re-renders the 'new' template" do
         Trip.stub(:new) { mock_trip(:save => false) }
         post :create, :trip => {}
-        response.should render_template("new")
+        response.should redirect_to(:controller=>"trips", :action=>"new", :trip=>[])
       end
     end
   end
