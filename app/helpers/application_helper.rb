@@ -5,6 +5,10 @@ module ApplicationHelper
     @current_tab +=1
   end
 
+  def error
+    'error' if !flash[:error].nil?
+  end
+
   def error_message_on(field)
     flash[:error][field][0] if !flash[:error].nil?
   end

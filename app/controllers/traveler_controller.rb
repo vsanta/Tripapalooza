@@ -26,15 +26,11 @@ class TravelerController < ApplicationController
   end
 
   def checkin
-    nick = params[:traveler][:nick]
-    password = params[:traveler][:password]
-
-    traveler = Traveler.find_by_nick nick
-
-    if (traveler.authenticate nick, password)
+    if (Traveler.authenticate params[:traveler][:nick], params[:traveler][:password])
       render :text => "Usuario/senha correto"
     else
-      render :text => "Usuario ou senha incorreto"
+      flash[:error] = "Usuario ou senha incorretos"
+      redirect_to :controller=> "traveler", :action=> "checkin_show", :traveler => params[:traveler]
     end
 
   end
