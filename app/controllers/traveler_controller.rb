@@ -22,4 +22,22 @@ class TravelerController < ApplicationController
 
   end
 
+  def checkin_show
+  end
+
+  def checkin
+    nick = params[:traveler][:nick]
+    password = params[:traveler][:password]
+
+    @traveler = Traveler.find_by_nick nick
+
+    if (!@traveler.nil? and @traveler.password.eql? password)
+      render :text => "Usuario/senha correto"
+    else
+      render :text => "Usuario ou senha incorreto"
+    end
+
+
+  end
+
 end

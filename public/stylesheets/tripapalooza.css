@@ -74,7 +74,7 @@ form span.error {
     width:606px;
 }
 
-form .form_item input{
+form input{
     height:20px;
     -moz-border-radius: 2px 2px 2px 2px;
     background:  #FFFFFF;
@@ -84,10 +84,19 @@ form .form_item input{
     margin: 5px 0 10px;
     padding:5px;
 }
-form .form_item input:focus{
+form fieldset.checkin input[type="text"]{
+    width: 105px;
+}
+form fieldset.checkin input[type="submit"]{
+    width: 150px;
+    text-align: center;
+    height: 30px;
+    padding: 5px 5px 10px;
+}
+form input:focus{
    border: 1px solid #2DAEBF;
 }
-form .form_item input.error{
+form input.error{
    border: 1px solid #AA3131;
 }
 
@@ -123,6 +132,7 @@ form input[type="submit"]:visited{
     padding: 8px 10px 9px;
     filter:chroma(color=#000000);
     width: 100%;
+    height: 50px;
     
 }
 form input[type="submit"]:hover{
@@ -133,8 +143,6 @@ form input[type="submit"]:hover{
 form input[type="submit"]:active{
     top: 1px;
 }
-
-
 
 footer {
 	background: #222;

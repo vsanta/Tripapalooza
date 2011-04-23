@@ -1,0 +1,8 @@
+#checkin
+  %p= flash[:error]
+
+  = form_for :traveler, :method => 'post', :url => {:controller => 'traveler', :action => 'checkin'} do |f|
+    %fieldset.checkin
+      = f.text_field :nick, :tabindex => autotab, :maxlength => 20, :value => 'Nickname', :onclick => "debuger:this.value=''"
+      = f.text_field :password, :tabindex => autotab, :maxlength => 20, :value => 'Password', :onclick => "debuger:this.value=''"
+      = f.submit "Check in »"
