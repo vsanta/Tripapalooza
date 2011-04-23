@@ -1,4 +1,6 @@
 class TripsController < ApplicationController
+  include GoogleMapsHelper
+  include GeocoderHelper
   # GET /trips
   def index
     @trips = Trip.all
@@ -12,6 +14,9 @@ class TripsController < ApplicationController
   # GET /trips/new
   def new
     @trip = Trip.new
+    map_init
+    @map.markers << get_my_current_location_marker
+
   end
 
   # GET /trips/1/edit
