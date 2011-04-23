@@ -79,7 +79,7 @@ describe TravelerController do
 
     end
 
-    describe "validations for Traverler's password" do
+    describe "validations for Traveler's password" do
       it "should return error when NOT INPUTTING a Traveler's PASSWORD" do
         traveler =  { nick: "isabel", email: "bel@tripapalooza.net" }
         post 'create', :traveler => traveler
@@ -121,19 +121,6 @@ describe TravelerController do
     end
   end
 
-  describe "POST 'checkin'" do
-
-    before() do
-      traveler = { nick: "isabel", email: "bel@tripapalooza.net", password: "123456" }
-      post 'create', :traveler => traveler
-    end
-
-    it "should CHECKIN SUCCESSFULLY" do
-      traveler =  { nick: "isabel", password: "123456" }
-      get 'checkin', :traveler => traveler
-      response.should have_text "Usuario/senha correto"
-    end
-  end
 
 
 

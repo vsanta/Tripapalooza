@@ -1,4 +1,5 @@
 Tripapalooza::Application.routes.draw do
+
   get "traveler/index"
 
   get "traveler/new"

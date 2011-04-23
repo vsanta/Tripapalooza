@@ -29,14 +29,13 @@ class TravelerController < ApplicationController
     nick = params[:traveler][:nick]
     password = params[:traveler][:password]
 
-    @traveler = Traveler.find_by_nick nick
+    traveler = Traveler.find_by_nick nick
 
-    if (!@traveler.nil? and @traveler.password.eql? password)
+    if (traveler.authenticate nick, password)
       render :text => "Usuario/senha correto"
     else
       render :text => "Usuario ou senha incorreto"
     end
-
 
   end
 

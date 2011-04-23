@@ -46,6 +46,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem "autotest"
   gem 'cucumber-rails'
-
+  gem 'factory_girl_rails', '1.0'
 
 end

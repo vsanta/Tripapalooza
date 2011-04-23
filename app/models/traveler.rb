@@ -3,8 +3,6 @@ class Traveler < ActiveRecord::Base
   before_validation :format_fields
 
   validates_presence_of :nick, :email, :password, message: :blank
-
-
   validates_uniqueness_of :nick
   validates_length_of :nick, maximum: 20, allow_nil: true, allow_blank: true
   validates_format_of :nick, without: / /, message: :blank
@@ -16,8 +14,21 @@ class Traveler < ActiveRecord::Base
   validates_length_of :password, minimum: 6, maximum: 20, allow_nil: true, allow_blank: true
   validates_format_of :password, without: / /, message: :blank_space
 
+  def self.authenticate(nick, submitted_password)
+    traveler = self.find_by_nick(nick)
+    return nil if traveler.nil?
+    return traveler if traveler.password_match?(submitted_password)
+  end
+
+  def password_match?(submitted_password)
+    self.password == submitted_password
+  end
+
+private
   def format_fields
     self.nick.downcase! if self.nick != nil
     self.email.downcase! if self.email != nil
   end
+
+
 end
