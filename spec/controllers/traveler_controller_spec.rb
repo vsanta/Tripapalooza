@@ -25,7 +25,7 @@ describe TravelerController do
       flash[:notice].should == 'Welcome to Tripapalooza!!!'
     end
 
-    describe "validations for travelersnickname" do
+    describe "validations for Traveler's nickname" do
       it "should return error when NOT INPUTTING a Traveler's NICK" do
         traveler = { email: "bel@tripapalooza.net", password: "123456" }
         post 'create', :traveler => traveler
@@ -51,7 +51,7 @@ describe TravelerController do
       end
     end
 
-    describe "validations for travelers email" do
+    describe "validations for Traveler's email" do
 
       it "should return error when NOT INPUTTING a Traveler's E-MAIL" do
         traveler =  { nick: "isabel", password: "123456" }
@@ -79,7 +79,7 @@ describe TravelerController do
 
     end
 
-    describe "validations for taverlers password" do
+    describe "validations for Traverler's password" do
       it "should return error when NOT INPUTTING a Traveler's PASSWORD" do
         traveler =  { nick: "isabel", email: "bel@tripapalooza.net" }
         post 'create', :traveler => traveler
@@ -113,6 +113,28 @@ describe TravelerController do
     end
 
   end
+
+  describe "GET 'checkin_show'" do
+    it "should be successful" do
+      get 'checkin_show'
+      response.should be_success
+    end
+  end
+
+  describe "POST 'checkin'" do
+
+    before() do
+      traveler = { nick: "isabel", email: "bel@tripapalooza.net", password: "123456" }
+      post 'create', :traveler => traveler
+    end
+
+    it "should CHECKIN SUCCESSFULLY" do
+      traveler =  { nick: "isabel", password: "123456" }
+      get 'checkin', :traveler => traveler
+      response.should have_text "Usuario/senha correto"
+    end
+  end
+
 
 
 end
