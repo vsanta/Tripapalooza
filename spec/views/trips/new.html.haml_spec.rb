@@ -2,7 +2,10 @@ require 'spec_helper'
 
 describe "trips/new.html.haml" do
   before(:each) do
+
     assign(:trip, stub_model(Trip).as_new_record)
+    assign(:map, Cartographer::Gmap.new('map'))
+    
   end
 
   it "renders new trip form" do
