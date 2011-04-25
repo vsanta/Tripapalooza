@@ -6,8 +6,8 @@ en:
   register: "Register »"
   trip_name_label: "Name your trip"
   trip_destination: "What's your destination?"
-  start_trip: "Starts on"
-  end_trip: "Until"
+  start_trip: "It starts on"
+  end_trip: "and goes until"
   create_trip: "Create »"
 
 

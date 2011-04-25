@@ -120,7 +120,7 @@ DEPENDENCIES
   factory_girl_rails (= 1.0)
   geocoder
   haml-rails
-  jquery-rails
+  jquery-rails (>= 0.2.6)
   mysql2
   rails (= 3.0.5)
   rspec

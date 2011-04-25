@@ -7,6 +7,8 @@ require 'rails/all'
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Tripapalooza
+
+
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -32,7 +34,8 @@ module Tripapalooza
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
-
+    
+    config.action_view.javascript_expansions[:defaults] = ['jquery-1.5.2.min', 'jquery-ui-1.8.11.custom.min', 'rails']
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 

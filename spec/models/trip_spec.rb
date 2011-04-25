@@ -7,8 +7,8 @@ describe Trip do
       @trip = Trip.new()
       @trip.destination = "New York"
       today = Date.today()
-      @trip.start = today
-      @trip.end = today.next_month()
+      @trip.start_date = today
+      @trip.end_date = today.next_month()
       @trip.name = "My Cool Trip to NYC"
     end
     it "should have a name" do
@@ -32,8 +32,8 @@ describe Trip do
     end
     describe "date information" do
       it "should have start date before of end date" do
-        @trip.end = @trip.start
-        @trip.start = @trip.end.yesterday
+        @trip.end_date = @trip.start_date
+        @trip.start_date = @trip.end_date.yesterday
         @trip.save.should raise_error
       end
     end

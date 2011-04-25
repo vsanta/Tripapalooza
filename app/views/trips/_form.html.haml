@@ -8,16 +8,17 @@
     %label{:for => "destination"}
     = t :trip_destination
     %span.error= error_message_on("destination")
-    = f.text_field :destination, :tabindex => autotab, :maxlength => 50, :class => error_for("destination")
+    = f.text_field :destination, :tabindex => autotab, :maxlength => 50, :class => [error_for("destination"), "destination"]
   %fieldset.form_item.date
-    %label{:for => "start"}
+    When is your trip?
+    %span.error= error_message_on("start_date")
+    %br
+    %label{:for => "start_date"}
     = t :start_trip
-    %span.error= error_message_on("start")
-    = f.text_field :start, :tabindex => autotab, :maxlength => 10, :class => error_for("start")
-    %label{:for => "end"}
+    = f.text_field :start_date, :tabindex => autotab, :maxlength => 10, :class => [error_for("start_date") , "datepicker"]
+    %label{:for => "end_date"}
     = t :end_trip
-    %span.error= error_message_on("end")
-    = f.text_field :end, :tabindex => autotab, :maxlength => 10, :class => error_for("end")
+    = f.text_field :end_date, :tabindex => autotab, :maxlength => 10, :class => [error_for("start_date"), "datepicker"]
 
   %p.form_submit
     = f.submit "Create trip »", :class=>"submit"

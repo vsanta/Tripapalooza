@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20110423043434) do
     t.string   "destination",     :null => false
     t.float    "destination_lat"
     t.float    "destination_lon"
-    t.date     "start"
-    t.date     "end"
+    t.date     "start_date"
+    t.date     "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
