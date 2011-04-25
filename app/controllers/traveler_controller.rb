@@ -18,7 +18,7 @@ class TravelerController < ApplicationController
     else
       flash[:error] = @traveler.errors
     end
-    redirect_to :back, :traveler => params[:traveler]
+    redirect_to :controller => 'landing', :action => 'index', :traveler => params[:traveler]
 
   end
 
@@ -28,7 +28,7 @@ class TravelerController < ApplicationController
     else
       flash[:checkin_error] = "Usuario ou senha incorretos"
       params[:checkin][:password] = ''
-      redirect_to :back, :checkin => params[:checkin]
+      redirect_to :controller => 'landing', :action => 'index', :checkin => params[:checkin]
     end
 
   end
