@@ -10,14 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110422182627) do
+ActiveRecord::Schema.define(:version => 20110423043434) do
 
   create_table "travelers", :force => true do |t|
-    t.string   "nick",       :limit => 20, :null => false
-    t.string   "email",      :limit => 50, :null => false
-    t.string   "password",   :limit => 20, :null => false
+    t.string   "nick",            :limit => 20, :null => false
+    t.string   "email",           :limit => 50, :null => false
+    t.string   "hashed_password",               :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "salt",                          :null => false
   end
 
   create_table "trips", :force => true do |t|
