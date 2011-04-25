@@ -16,7 +16,7 @@ class Traveler < ActiveRecord::Base
   validates_format_of :email, with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i, allow_blank: true, allow_nil: true
   validates_length_of :email, maximum: 50, allow_nil: true, allow_blank: true
 
-  validates_presence_of :password, message: :blank, on: :update
+  validates_presence_of :password, message: :blank
   validates_length_of :password, minimum: 6, maximum: 20, allow_nil: true, allow_blank: true
   validates_format_of :password, without: / /, message: :blank_space
 

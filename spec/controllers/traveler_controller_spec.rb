@@ -36,7 +36,7 @@ describe TravelerController do
       @traveler[:password] = nil
       post 'create', :traveler => @traveler
       response.should redirect_to(:back, traveler: @traveler)
-      assert_equal(3, assigns[:traveler].errors.count)
+      assert_equal(4, assigns[:traveler].errors.count)
     end
 
   end
